@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arvarga.Utils.Stats", "Arvarga.Utils.Stats\Arvarga.Utils.Stats.csproj", "{AB5F7030-AEAF-421C-8469-517726E3C854}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aravrga.Utils.Stats.Test.Unit", "Aravrga.Utils.Stats.Test.Unit\Aravrga.Utils.Stats.Test.Unit.csproj", "{F7CA6E7F-942D-4FC1-A17E-17D0715CE656}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arvarga.Utils.Stats.Test.Unit", "Arvarga.Utils.Stats.Test.Unit\Arvarga.Utils.Stats.Test.Unit.csproj", "{F7CA6E7F-942D-4FC1-A17E-17D0715CE656}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

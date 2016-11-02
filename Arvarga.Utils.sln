@@ -5,8 +5,6 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arvarga.Utils.Stats", "Arvarga.Utils.Stats\Arvarga.Utils.Stats.csproj", "{AB5F7030-AEAF-421C-8469-517726E3C854}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aravrga.Utils.Stats.Test.Unit", "Aravrga.Utils.Stats.Test.Unit\Aravrga.Utils.Stats.Test.Unit.csproj", "{F7CA6E7F-942D-4FC1-A17E-17D0715CE656}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arvarga.Utils.ServiceRepo", "Arvarga.Utils.ServiceRepo\Arvarga.Utils.ServiceRepo.csproj", "{7428DC3B-B742-4D95-909F-C77115414ADA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arvarga.Utils.ServiceRepo.Test.Sample", "Arvarga.Utils.ServiceRepo.Test.Sample\Arvarga.Utils.ServiceRepo.Test.Sample.csproj", "{0903DB59-9A0E-4B24-935A-A29C74EB082D}"
@@ -16,6 +14,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Stats", "Stats", "{8F6C3FDB-1E3F-49AD-9B2C-8BFBFACD72A3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceRepo", "ServiceRepo", "{BB9410D5-E3E5-4B90-9B2C-B8E7BAD7DF28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arvarga.Utils.Stats.Test.Unit", "Arvarga.Utils.Stats.Test.Unit\Arvarga.Utils.Stats.Test.Unit.csproj", "{F7CA6E7F-942D-4FC1-A17E-17D0715CE656}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,10 +27,6 @@ Global
 		{AB5F7030-AEAF-421C-8469-517726E3C854}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB5F7030-AEAF-421C-8469-517726E3C854}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB5F7030-AEAF-421C-8469-517726E3C854}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F7CA6E7F-942D-4FC1-A17E-17D0715CE656}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F7CA6E7F-942D-4FC1-A17E-17D0715CE656}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F7CA6E7F-942D-4FC1-A17E-17D0715CE656}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F7CA6E7F-942D-4FC1-A17E-17D0715CE656}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7428DC3B-B742-4D95-909F-C77115414ADA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7428DC3B-B742-4D95-909F-C77115414ADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7428DC3B-B742-4D95-909F-C77115414ADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -43,15 +39,19 @@ Global
 		{4AC9D37D-D024-4024-BA6F-1A16B83AA58E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AC9D37D-D024-4024-BA6F-1A16B83AA58E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4AC9D37D-D024-4024-BA6F-1A16B83AA58E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7CA6E7F-942D-4FC1-A17E-17D0715CE656}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7CA6E7F-942D-4FC1-A17E-17D0715CE656}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7CA6E7F-942D-4FC1-A17E-17D0715CE656}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7CA6E7F-942D-4FC1-A17E-17D0715CE656}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{AB5F7030-AEAF-421C-8469-517726E3C854} = {8F6C3FDB-1E3F-49AD-9B2C-8BFBFACD72A3}
-		{F7CA6E7F-942D-4FC1-A17E-17D0715CE656} = {8F6C3FDB-1E3F-49AD-9B2C-8BFBFACD72A3}
 		{7428DC3B-B742-4D95-909F-C77115414ADA} = {BB9410D5-E3E5-4B90-9B2C-B8E7BAD7DF28}
 		{0903DB59-9A0E-4B24-935A-A29C74EB082D} = {BB9410D5-E3E5-4B90-9B2C-B8E7BAD7DF28}
 		{4AC9D37D-D024-4024-BA6F-1A16B83AA58E} = {BB9410D5-E3E5-4B90-9B2C-B8E7BAD7DF28}
+		{F7CA6E7F-942D-4FC1-A17E-17D0715CE656} = {8F6C3FDB-1E3F-49AD-9B2C-8BFBFACD72A3}
 	EndGlobalSection
 EndGlobal
