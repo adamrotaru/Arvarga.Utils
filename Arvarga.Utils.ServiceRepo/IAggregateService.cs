@@ -1,3 +1,8 @@
+/*
+ * See the LICENSE file for copyright and license conditions.
+ * (c) 2016 Adam Rotaru
+ */
+
 ﻿using System;
 using System.Collections.Generic;
 

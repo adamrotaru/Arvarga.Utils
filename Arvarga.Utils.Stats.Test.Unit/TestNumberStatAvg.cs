@@ -1,4 +1,9 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+/*
+ * See the LICENSE file for copyright and license conditions.
+ * (c) 2016 Adam Rotaru
+ */
+
+﻿﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
 namespace Arvarga.Utils.Stats.Test.Unit
