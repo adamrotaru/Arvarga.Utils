@@ -43,6 +43,7 @@
     <Compile Include="IAggregateService.cs" />
     <Compile Include="IService.cs" />
     <Compile Include="IServiceRepository.cs" />
+    <Compile Include="IServiceRepositoryFull.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceRepository.cs" />
   </ItemGroup>

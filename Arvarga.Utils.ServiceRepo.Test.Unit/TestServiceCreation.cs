@@ -17,13 +17,14 @@ namespace Arvarga.Utils.ServiceRepo.Test.Unit
         public void TestServiceCreation_Simple()
         {
             // create the service repo with the services
-            ServiceRepository repo = new ServiceRepository();
+            IServiceRepositoryFull repo = new ServiceRepository();
             repo.InitWithServices(new List<IService>
             {
                 new SimpleOneService(),
                 new SimpleTwoService(),
                 new CompoundThreeService(),
             });
+            Console.WriteLine($"Services initialized: {repo.ToString()}");
 
             // make sure services can be retrieved
             Assert.IsNotNull(repo.Get<ISimpleOneService>(), "Service could not be retrieved, SimpleOneService");

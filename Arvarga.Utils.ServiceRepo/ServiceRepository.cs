@@ -19,7 +19,7 @@ namespace Arvarga.Utils.ServiceRepo
     /// <summary>
     /// Repository for (micro)services.
     /// </summary>
-    public class ServiceRepository : IServiceRepository
+    public class ServiceRepository : IServiceRepositoryFull
     {
         enum InitializeState
         {
