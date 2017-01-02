@@ -1,0 +1,8 @@
+{
+    "projects":[
+        "Arvarga.Utils.ServiceRepo", 
+        "Arvarga.Utils.ServiceRepo.Test.Sample", 
+        "Arvarga.Utils.Stats", 
+        "Arvarga.Utils.TestUtils"
+    ]
+}

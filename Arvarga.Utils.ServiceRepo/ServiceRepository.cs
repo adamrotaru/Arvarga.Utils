@@ -6,6 +6,7 @@
 ﻿﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 
 namespace Arvarga.Utils.ServiceRepo
@@ -44,7 +45,7 @@ namespace Arvarga.Utils.ServiceRepo
             {
                 if (myInitializeState >= InitializeState.InitCallsStarted)
                 {
-                    throw new ApplicationException($"ServiceRepository already initialized, cannot add more services {this}");
+                    throw new Exception($"ServiceRepository already initialized, cannot add more services {this}");
                 }
 
                 // use the same serviceInfo object
@@ -73,11 +74,11 @@ namespace Arvarga.Utils.ServiceRepo
             {
                 if (myInitializeState < InitializeState.InitCallsStarted)
                 {
-                    throw new ApplicationException($"ServiceRepository not yet initialized, cannot retrieve services {this}");
+                    throw new Exception($"ServiceRepository not yet initialized, cannot retrieve services {this}");
                 }
                 if (!myDict.ContainsKey(serviceTypeName))
                 {
-                    throw new ApplicationException($"Configuration error: Service '{serviceTypeName}' not found in service repository {this}");
+                    throw new Exception($"Configuration error: Service '{serviceTypeName}' not found in service repository {this}");
                 }
                 ret = myDict[serviceTypeName]._service;
             }   
@@ -110,7 +111,7 @@ namespace Arvarga.Utils.ServiceRepo
                     // make sure it is inited
                     if (!myDict.ContainsKey(serviceTypeName) || !myDict[serviceTypeName]._initedFlag)
                     {
-                        throw new ApplicationException($"Service '{serviceTypeName}' not yet initialized! (while initing {myCurrentlyInitializingService?._service.GetType().FullName}) {this}");
+                        throw new Exception($"Service '{serviceTypeName}' not yet initialized! (while initing {myCurrentlyInitializingService?._service.GetType().FullName}) {this}");
                     }
                 }
             }
@@ -162,7 +163,7 @@ namespace Arvarga.Utils.ServiceRepo
             {
                 if (myInitializeState >= InitializeState.InitCallsStarted)
                 {
-                    throw new ApplicationException($"ServiceRepository already initialized {this}");
+                    throw new Exception($"ServiceRepository already initialized {this}");
                 }
                 myInitializeState = InitializeState.InitCallsStarted;
             }
@@ -191,7 +192,7 @@ namespace Arvarga.Utils.ServiceRepo
                         {
                             if (exFromServiceInit == null)  // keep only the first exception
                             {
-                                exFromServiceInit = new ApplicationException($"Exception during initializing service '{serv._service.GetType().Name}': {ex.Message} this: {this.ToString()}", ex);
+                                exFromServiceInit = new Exception($"Exception during initializing service '{serv._service.GetType().Name}': {ex.Message} this: {this.ToString()}", ex);
                             }
                         }
                         myCurrentlyInitializingService = null;
@@ -211,6 +212,7 @@ namespace Arvarga.Utils.ServiceRepo
             }
         }
 
+        /*  CreateInstanceFrom  not available in .NET Core
         /// <summary>
         /// Create a service instance from a DLL through reflection, and add it to the repository.  InitServices() is needed at the end.
         /// It is used to avoid compile-time dependencies to the service implementations.
@@ -223,17 +225,22 @@ namespace Arvarga.Utils.ServiceRepo
 
         public void AddServiceInstanceFromDll(string dllName, string implementationTypeFullName)
         {
-            object impl = Activator.CreateInstanceFrom(dllName, implementationTypeFullName).Unwrap();
+            object impl = Activator.Cre
+            .CreateInstanceFrom(dllName, implementationTypeFullName).Unwrap();
             IService implServ = impl as IService; 
             if (implServ != null)
             {
                 Add(implServ);
             }
         }
+        */
 
         private IEnumerable<Type> GetInterfaceNamesOfService(Type serviceType)
         {
+            /*  Original, 'classic-style' reflection implementation
             return serviceType.GetInterfaces().Where(t => t.GetInterfaces().Where(t2 => t2.Equals(typeof(IService))).Any());
+            */
+            return serviceType.GetTypeInfo().ImplementedInterfaces.Where(t => t.GetTypeInfo().ImplementedInterfaces.Where(t2 => t2.Equals(typeof(IService))).Any());
         }
 
         public override string ToString()

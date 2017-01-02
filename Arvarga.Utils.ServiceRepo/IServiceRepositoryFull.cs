@@ -29,6 +29,7 @@ namespace Arvarga.Utils.ServiceRepo
         /// <param name="services"></param>
         void AddServices(IList<IService> services);
 
+        /*  CreateInstanceFrom  not available in .NET Core
         /// <summary>
         /// Create a service instance from a DLL through reflection, and add it to the repository.  InitServices() is needed at the end.
         /// It is used to avoid compile-time dependencies to the service implementations.
@@ -39,6 +40,7 @@ namespace Arvarga.Utils.ServiceRepo
         /// <param name="dllName"></param>
         /// <param name="implementationTypeFullName"></param>
         void AddServiceInstanceFromDll(string dllName, string implementationTypeFullName);
+        */
 
         /// <summary>
         /// Call Init() on the added service instances, in the order of their addition.  
