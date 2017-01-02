@@ -212,7 +212,6 @@ namespace Arvarga.Utils.ServiceRepo
             }
         }
 
-        /*  CreateInstanceFrom  not available in .NET Core
         /// <summary>
         /// Create a service instance from a DLL through reflection, and add it to the repository.  InitServices() is needed at the end.
         /// It is used to avoid compile-time dependencies to the service implementations.
@@ -225,15 +224,17 @@ namespace Arvarga.Utils.ServiceRepo
 
         public void AddServiceInstanceFromDll(string dllName, string implementationTypeFullName)
         {
-            object impl = Activator.Cre
-            .CreateInstanceFrom(dllName, implementationTypeFullName).Unwrap();
+            //  Original, 'classic-style' reflection implementation
+            //object impl = Activator.CreateInstanceFrom(dllName, implementationTypeFullName).Unwrap();
+            AssemblyName asname = new AssemblyName(dllName);
+            Assembly ass = Assembly.Load(asname);
+            object impl = ass.CreateInstance(implementationTypeFullName);
             IService implServ = impl as IService; 
             if (implServ != null)
             {
                 Add(implServ);
             }
         }
-        */
 
         private IEnumerable<Type> GetInterfaceNamesOfService(Type serviceType)
         {
