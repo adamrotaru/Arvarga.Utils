@@ -24,7 +24,7 @@ namespace Arvarga.Utils.Stats
 
         protected int myMaxCount;
         protected int myMaxAgeSec;
-        protected int myCountAll;
+        protected long myCountAll;
         protected Queue<SampleEntry> mySamples = new Queue<SampleEntry>();
         protected double myTotal;
         protected double myTotalAll;
@@ -131,12 +131,12 @@ namespace Arvarga.Utils.Stats
         /// <summary>
         /// Get the current all-time count of the samples.
         /// </summary>
-        public double CountAll { get { return myCountAll; } }
+        public long CountAll { get { return myCountAll; } }
 
         /// <summary>
         /// Get the current count of the samples.
         /// </summary>
-        public double Count { get { return mySamples.Count; } }
+        public int Count { get { return mySamples.Count; } }
 
         /// <summary>
         /// Get the current average of the samples (0 for the case of no samples).

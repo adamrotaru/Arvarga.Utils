@@ -45,7 +45,7 @@ namespace Arvarga.Utils.Stats
         /// <summary>
         /// Get the current count of the samples.
         /// </summary>
-        public double Count { get { return myCount; } }
+        public int Count { get { return myCount; } }
 
         /// <summary>
         /// Get the current average of the samples (0 for the case of no samples).
