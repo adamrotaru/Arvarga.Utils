@@ -43,8 +43,7 @@ namespace Arvarga.Utils.TestUtils
             int waitTimeMs = firstWaitMs;
             waitIncreasePct = Math.Max(Math.Min(waitIncreasePct, 200), 100);
 
-            Console.WriteLine("Checking '{0}', with max timeout of {1} ms, wait strategy of start={2} ms and increase={3} %",
-                checkDescription, maxTimeMs, firstWaitMs, waitIncreasePct);
+            Console.WriteLine($"Checking '{checkDescription}', with max timeout of {maxTimeMs} ms, wait strategy of start={firstWaitMs} ms and increase={waitIncreasePct} %");
 
             // check in a loop
             while (true)
@@ -57,14 +56,14 @@ namespace Arvarga.Utils.TestUtils
                 int curElapsedMs = (int)DateTime.Now.Subtract(startTime).TotalMilliseconds;
                 if (res)
                 {
-                    Console.WriteLine("check fulfilled, stop, elapsed {0} ms", curElapsedMs);
+                    Console.WriteLine($"check fulfilled, stop, elapsed {curElapsedMs} ms");
                     // OK
                     return true;
                 }
 
                 if (DateTime.Now > stopTime)
                 {
-                    Console.WriteLine("failed due to time-out, elapsed {0} ms, max {1}", curElapsedMs, maxTimeMs);
+                    Console.WriteLine($"failed due to time-out, elapsed {curElapsedMs} ms, max {maxTimeMs}");
                     return false;
                 }
 
@@ -75,8 +74,7 @@ namespace Arvarga.Utils.TestUtils
                 {
                     waitTimeMs = Math.Max(maxTimeMs - curElapsedMs + 1, 1);
                 }
-                Console.WriteLine("check still failed, time elapsed {0} ms, wait time prev {1}, next {2} ms",
-                    curElapsedMs, prevWaitTimeMs, waitTimeMs);
+                Console.WriteLine($"check still failed, time elapsed {curElapsedMs} ms, wait time prev {prevWaitTimeMs}, next {waitTimeMs} ms");
             }
         }
     }
